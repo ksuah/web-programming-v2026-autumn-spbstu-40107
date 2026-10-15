@@ -1,5 +1,5 @@
 function calculateExpression(expr) {
-  const expression = expr.split(' ');
+  const expression = expr.match(/\d+\.?\d*|[+\-*/]/g);
 
   let i = 0;
   while (i < expression.length) {
@@ -7,14 +7,14 @@ function calculateExpression(expr) {
       const number1 = Number(expression[i - 1]);
       const number2 = Number(expression[i + 1]);
 
-      let result;
+      let value;
       if (expression[i] === '*') {
-        result = number1 * number2;
+        value = number1 * number2;
       } else {
-        result = number1 / number2;
+        value = number1 / number2;
       }
 
-      expression.splice(i - 1, 3, result);
+      expression.splice(i - 1, 3, value);
     } else {
       i++;
     }
