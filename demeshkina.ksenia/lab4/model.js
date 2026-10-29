@@ -60,4 +60,75 @@ class Movie {
   }
 }
 
-export {Movie};
+function groupMoviesByDirector(movies) {
+  const result = {};
+  for (let i = 0; i < movies.length; i++) {
+    const director = movies[i].profile.director;
+
+    if (!(director in result)) {
+      result[director] = [];
+    }
+    result[director].push(movies[i]);
+  }
+
+  return result;
+}
+
+function getUniqueActors(movies) {
+  const result = [];
+
+  for (let i = 0; i < movies.length; i++) {
+    const actors = movies[i].profile.actors;
+
+    for (let j = 0; j < actors.length; j++) {
+      if (!result.includes(actors[j])) {
+        result.push(actors[j]);
+      }
+    }
+  }
+
+  return result;
+}
+
+function groupMoviesByCastSize(movies) {
+  const result = {};
+  for (let i = 0; i < movies.length; i++) {
+    const size = movies[i].castSize;
+
+    if (!(size in result)) {
+      result[size] = [];
+    }
+    result[size].push(movies[i]);
+  }
+
+  return result;
+}
+
+function getMoviesByActor(movies, actorName) {
+  const result = [];
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].profile.actors.includes(actorName)) {
+      result.push(movies[i]);
+    }
+  }
+
+  return result;
+}
+
+function getMovieTitles(movies) {
+  const result = [];
+  for (let i = 0; i < movies.length; i++) {
+    result.push(movies[i].profile.title);
+  }
+
+  return result;
+}
+
+export {
+  Movie,
+  groupMoviesByDirector,
+  getUniqueActors,
+  groupMoviesByCastSize,
+  getMoviesByActor,
+  getMovieTitles,
+};
