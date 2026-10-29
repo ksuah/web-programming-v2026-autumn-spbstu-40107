@@ -26,7 +26,7 @@ const initialMovies = [
   ]),
 ];
 
-function groupByDirector(movies) {
+function groupMoviesByDirector(movies) {
   const result = {};
   for (let i = 0; i < movies.length; i++) {
     const director = movies[i].profile.director;
@@ -159,6 +159,7 @@ function render() {
   for (const item of movieList) {
     const card = document.createElement('div');
     card.className = 'card';
+    card.dataset.testid = 'entity-card';
 
     const title = document.createElement('h2');
     title.textContent = item.title;
@@ -219,4 +220,11 @@ window.addEventListener('beforeunload', saveMovies);
 
 render();
 
-export {groupByDirector, uniqueActors, groupBySize, getMovieByActor, getTitles};
+export {
+  Movie,
+  groupMoviesByDirector,
+  uniqueActors,
+  groupBySize,
+  getMovieByActor,
+  getTitles,
+};
