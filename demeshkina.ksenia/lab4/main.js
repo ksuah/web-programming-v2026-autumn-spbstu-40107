@@ -162,6 +162,6 @@ export {
   groupMoviesByDirector,
   getUniqueActors,
   groupMoviesByCastSize,
-  getMoviesByActor,
+  findMoviesByActor,
   getMovieTitles,
 } from './model.js';

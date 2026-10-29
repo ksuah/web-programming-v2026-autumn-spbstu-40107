@@ -104,7 +104,7 @@ function groupMoviesByCastSize(movies) {
   return result;
 }
 
-function getMoviesByActor(movies, actorName) {
+function findMoviesByActor(movies, actorName) {
   const result = [];
   for (let i = 0; i < movies.length; i++) {
     if (movies[i].profile.actors.includes(actorName)) {
@@ -129,6 +129,6 @@ export {
   groupMoviesByDirector,
   getUniqueActors,
   groupMoviesByCastSize,
-  getMoviesByActor,
+  findMoviesByActor,
   getMovieTitles,
 };
