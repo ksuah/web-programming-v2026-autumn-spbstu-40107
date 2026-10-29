@@ -1,7 +1,13 @@
 function calculateExpression(expr) {
-  if (typeof expr !== 'string') {return 0;}
-  if (expr === '') {return 0;}
-  if (expr.match(/[a-zA-Zа-яА-Я]/)) {return 0;}
+  if (typeof expr !== 'string') {
+    return 0;
+  }
+  if (expr === '') {
+    return 0;
+  }
+  if (expr.match(/[a-zA-Zа-яА-Я]/)) {
+    return 0;
+  }
 
   const expression = expr.match(/\d+\.?\d*|[+\-*/]/g);
 
