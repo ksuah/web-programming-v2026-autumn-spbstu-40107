@@ -134,7 +134,7 @@ function render() {
 
     const removeMovieButton = document.createElement('button');
     removeMovieButton.textContent = 'Удалить фильм';
-    removeMovieButton.dataset.testid = 'entity-delete';
+    removeMovieButton.dataset.testid = 'delete-entity';
     removeMovieButton.addEventListener('click', () => {
       removeMovie(item);
     });
